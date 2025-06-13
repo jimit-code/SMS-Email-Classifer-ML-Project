@@ -6,11 +6,17 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
+nltk.download('stopwords')
+nltk.download('punk')
+
 with open('tfidf.pkl', 'rb') as f:
     tfidf = pickle.load(f)
 
 with open('nb_model.pkl', 'rb') as f:
     model = pickle.load(f)
+
+nltk.download('stopwords')
+nltk.download('punk')
 
 stemmer = PorterStemmer()
 stop_words = set(stopwords.words('english'))
