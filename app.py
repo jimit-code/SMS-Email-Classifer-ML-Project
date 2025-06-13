@@ -7,7 +7,7 @@ from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
 nltk.download('stopwords')
-nltk.download('punk')
+nltk.download('punkt')
 
 with open('tfidf.pkl', 'rb') as f:
     tfidf = pickle.load(f)
