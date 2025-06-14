@@ -10,9 +10,6 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
-nltk.download('punkt', download_dir='nltk_data')
-nltk.download('stopwords', download_dir='nltk_data')
-
 with open('tfidf.pkl', 'rb') as f:
     tfidf = pickle.load(f)
 
