@@ -3,15 +3,13 @@ import streamlit as st
 import pickle
 import re
 import nltk
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
 
 try:
+    nltk.data.find('tokenizers/punkt')
     nltk.data.find('corpora/stopwords')
 except LookupError:
-    nltk.download('stopwords')
+    nltk.download('all')
+
 
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
