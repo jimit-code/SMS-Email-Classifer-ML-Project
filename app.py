@@ -1,7 +1,6 @@
 import os
 os.environ['NLTK_DATA'] = os.path.join(os.path.dirname(__file__), 'nltk_data')
 
-
 import streamlit as st
 import pickle
 import re
@@ -16,9 +15,6 @@ with open('tfidf.pkl', 'rb') as f:
 with open('nb_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-nltk.download('stopwords')
-nltk.download('punk')
-
 stemmer = PorterStemmer()
 stop_words = set(stopwords.words('english'))
 
@@ -28,7 +24,7 @@ def processor(text):
     text = text.lower()
 
     #remove any kind of extra symbols
-    text = re.sub(r'[^a-zA-Z0-9\s]]', '', text)
+    text = re.sub(r'[^a-zA-Z0-9\s]', '', text)
 
     #tokenize the word
     words = word_tokenize(text)
