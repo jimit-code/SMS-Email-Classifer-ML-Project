@@ -1,11 +1,18 @@
 import os
-nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
-os.environ["NLTK_DATA"] = nltk_data_dir
-
 import streamlit as st
 import pickle
 import re
 import nltk
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
+
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
