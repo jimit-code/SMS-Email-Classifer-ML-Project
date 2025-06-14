@@ -1,3 +1,7 @@
+import os
+os.environ['NLTK_DATA'] = os.path.join(os.path.dirname(__file__), 'nltk_data')
+
+
 import streamlit as st
 import pickle
 import re
@@ -6,8 +10,8 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
-nltk.download('stopwords')
-nltk.download('punkt')
+nltk.download('punkt', download_dir='nltk_data')
+nltk.download('stopwords', download_dir='nltk_data')
 
 with open('tfidf.pkl', 'rb') as f:
     tfidf = pickle.load(f)
