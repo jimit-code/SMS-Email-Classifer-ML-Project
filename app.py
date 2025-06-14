@@ -1,5 +1,6 @@
 import os
-os.environ['NLTK_DATA'] = os.path.join(os.path.dirname(__file__), 'nltk_data')
+nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
+os.environ["NLTK_DATA"] = nltk_data_dir
 
 import streamlit as st
 import pickle
